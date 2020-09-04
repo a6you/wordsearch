@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 List<List<String>> gridState = [
-  ['', 'T', '', '', '', '', '', 'P2'],
-  ['', '', '', 'T', '', '', '', ''],
-  ['B', 'T', '', '', '', 'B', '', ''],
-  ['', '', '', 'B', '', '', '', 'T'],
-  ['', '', 'T', '', '', 'T', '', ''],
-  ['', '', '', '', '', '', '', 'B'],
-  ['', '', '', '', 'T', '', '', ''],
-  ['P1', '', '', '', '', '', 'T', ''],
+  ['', 'T', '', '', '', '', '', 'P2', '', ''],
+  ['', '', '', 'T', '', '', '', '', '', ''],
+  ['B', 'T', '', '', '', 'B', '', '', '', ''],
+  ['', '', '', 'B', '', '', '', 'T', '', ''],
+  ['', '', 'T', '', '', 'T', '', '', '', ''],
+  ['', '', '', '', '', '', '', 'B', '', ''],
+  ['', '', '', '', 'T', '', '', '', '', ''],
+  ['P1', '', '', '', '', '', 'T', '', '', ''],
+  ['', '', '', '', '', '', '', '', '', ''],
+  ['', '', '', '', '', '', '', '', '', ''],
 ];
 
 class Board extends StatefulWidget {
@@ -21,7 +23,7 @@ class _State extends State<Board> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game World'),
+        title: Text('Game'),
       ),
       body: _buildGameBody(),
     );
@@ -29,6 +31,7 @@ class _State extends State<Board> {
 
   Widget _buildGameBody() {
     int gridStateLength = gridState.length;
+    print(gridStateLength);
     return Column(children: <Widget>[
       AspectRatio(
         aspectRatio: 1.0,
