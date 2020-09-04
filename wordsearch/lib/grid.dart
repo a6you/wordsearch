@@ -23,7 +23,7 @@ class _State extends State<Board> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game'),
+        title: Text('Game Home'),
       ),
       body: _buildGameBody(),
     );
