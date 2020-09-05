@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 List<List<String>> gridState = [
-  ['', 'T', '', '', '', '', '', 'P2', '', ''],
-  ['', '', '', 'T', '', '', '', '', '', ''],
-  ['B', 'T', '', '', '', 'B', '', '', '', ''],
-  ['', '', '', 'B', '', '', '', 'T', '', ''],
-  ['', '', 'T', '', '', 'T', '', '', '', ''],
-  ['', '', '', '', '', '', '', 'B', '', ''],
-  ['', '', '', '', 'T', '', '', '', '', ''],
-  ['P1', '', '', '', '', '', 'T', '', '', ''],
-  ['', '', '', '', '', '', '', '', '', ''],
-  ['', '', '', '', '', '', '', '', '', ''],
+  ['J', 'A', 'V', 'A', 'K', 'O', 'T', 'L', 'I', 'N'],
+  ['O', 'B', 'J', 'E', 'C', 'T', 'I', 'V', 'E', 'C'],
+  ['V', 'A', 'R', 'I', 'A', 'B', 'L', 'E', 'A', 'B'],
+  ['M', 'O', 'B', 'I', 'L', 'E', 'F', 'T', 'S', 'D'],
+  ['L', 'G', 'T', 'Z', 'P', 'T', 'C', 'V', 'I', 'J'],
+  ['S', 'V', 'W', 'U', 'Q', 'I', 'K', 'B', 'C', 'G'],
+  ['P', 'E', 'O', 'X', 'T', 'J', 'S', 'O', 'W', 'Q'],
+  ['D', 'F', 'Y', 'I', 'O', 'S', 'T', 'R', 'Z', 'L'],
+  ['E', 'V', 'S', 'Q', 'M', 'K', 'D', 'Y', 'F', 'O'],
+  ['F', 'S', 'I', 'N', 'X', 'H', 'J', 'G', 'U', 'W'],
 ];
 
 class Board extends StatefulWidget {
@@ -31,7 +31,7 @@ class _State extends State<Board> {
 
   Widget _buildGameBody() {
     int gridStateLength = gridState.length;
-    print(gridStateLength);
+    //print(gridStateLength);
     return Column(children: <Widget>[
       AspectRatio(
         aspectRatio: 1.0,
@@ -58,7 +58,7 @@ class _State extends State<Board> {
     x = (index / gridStateLength).floor();
     y = (index % gridStateLength);
     return GestureDetector(
-      //onTap: () => _gridItemTapped(x, y),
+      onTap: () => _gridItemTapped(x, y),
       child: GridTile(
         child: Container(
           decoration: BoxDecoration(
@@ -72,7 +72,8 @@ class _State extends State<Board> {
   }
 
   Widget _buildGridItem(int x, int y) {
-    switch (gridState[x][y]) {
+    return Text(gridState[x][y]);
+    /*switch (gridState[x][y]) {
       case '':
         return Text('');
         break;
@@ -98,6 +99,12 @@ class _State extends State<Board> {
         break;
       default:
         return Text(gridState[x][y].toString());
-    }
+    }*/
+  }
+
+  void _gridItemTapped(int x, int y) {
+    setState(() {
+      gridState[x][y] = 'P1';
+    });
   }
 }
