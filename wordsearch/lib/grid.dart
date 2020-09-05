@@ -13,6 +13,15 @@ List<List<String>> gridState = [
   ['F', 'S', 'I', 'N', 'X', 'H', 'J', 'G', 'U', 'W'],
 ];
 
+List<List<String>> targetWords = [
+  ['J', 'A', 'V', 'A'],
+  ['O', 'B', 'J', 'E', 'C', 'T', 'I', 'V', 'E', 'C'],
+  ['V', 'A', 'R', 'I', 'A', 'B', 'L', 'E'],
+  ['M', 'O', 'B', 'I', 'L', 'E'],
+  ['K', 'O', 'T', 'L', 'I', 'N'],
+  ['S', 'W', 'I', 'F', 'T'],
+];
+
 class Board extends StatefulWidget {
   @override
   _State createState() => _State();
