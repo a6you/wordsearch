@@ -13,6 +13,17 @@ List<List<String>> gridState = [
   ['F', 'S', 'I', 'N', 'X', 'H', 'J', 'G', 'U', 'W'],
 ];
 
+List<List<String>> targetWords = [
+  ['J', 'A', 'V', 'A'],
+  ['O', 'B', 'J', 'E', 'C', 'T', 'I', 'V', 'E', 'C'],
+  ['V', 'A', 'R', 'I', 'A', 'B', 'L', 'E'],
+  ['M', 'O', 'B', 'I', 'L', 'E'],
+  ['K', 'O', 'T', 'L', 'I', 'N'],
+  ['S', 'W', 'I', 'F', 'T'],
+];
+
+List<String> selectedLetters = [];
+
 class Board extends StatefulWidget {
   @override
   _State createState() => _State();
@@ -72,39 +83,17 @@ class _State extends State<Board> {
   }
 
   Widget _buildGridItem(int x, int y) {
-    return Text(gridState[x][y]);
-    /*switch (gridState[x][y]) {
-      case '':
-        return Text('');
-        break;
-      case 'P1':
-        return Container(
-          color: Colors.blue,
-        );
-        break;
-      case 'P2':
-        return Container(
-          color: Colors.yellow,
-        );
-        break;
-      case 'T':
-        return Icon(
-          Icons.terrain,
-          size: 40.0,
-          color: Colors.red,
-        );
-        break;
-      case 'B':
-        return Icon(Icons.remove_red_eye, size: 40.0);
-        break;
-      default:
-        return Text(gridState[x][y].toString());
-    }*/
+    if (gridState[x][y].contains('0')) {
+      String letter = gridState[x][y].substring(0, 1);
+      return Container(color: Colors.blue, child: Text(letter));
+    } else {
+      return Text(gridState[x][y]);
+    }
   }
 
   void _gridItemTapped(int x, int y) {
     setState(() {
-      gridState[x][y] = 'P1';
+      gridState[x][y] = gridState[x][y] + '0';
     });
   }
 }
