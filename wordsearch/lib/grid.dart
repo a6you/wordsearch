@@ -69,7 +69,10 @@ class _State extends State<Board> {
     x = (index / gridStateLength).floor();
     y = (index % gridStateLength);
     return GestureDetector(
-      onTap: () => _gridItemTapped(x, y),
+      onTap: () {
+        _gridItemTapped(x, y);
+        Future.delayed(Duration(seconds: 1), () {});
+      },
       child: GridTile(
         child: Container(
           decoration: BoxDecoration(
@@ -93,6 +96,8 @@ class _State extends State<Board> {
 
   void _gridItemTapped(int x, int y) {
     setState(() {
+      selectedLetters.add(gridState[x][y]);
+      print(selectedLetters.toString());
       gridState[x][y] = gridState[x][y] + '0';
     });
   }
