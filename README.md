@@ -8,11 +8,14 @@ A simple word search game that tracks how many words a player has found and when
 
 
 * Game with no words found:
+
 ![Word Search with no words found](/assets/nowords.png)
 
 * Game with some words found:
+
 ![Word Search with some words found](/assets/somewords.png)
 
 
 * Game with all words found:
+
 ![Word Search with all words found](/assets/allwords.png)
