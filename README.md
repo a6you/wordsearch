@@ -6,4 +6,13 @@ A simple word search game that tracks how many words a player has found and when
 1. After selecting some tiles, if you are sure that your selection of letters forms one of the words to be found, double tap the screen.
 1. If it is indeed a word from the list below the grid, you'll be one word closer to victory!
 
+
+* Game with no words found:
 ![Word Search with no words found](/assets/nowords.png)
+
+* Game with some words found:
+![Word Search with some words found](/assets/somewords.png)
+
+
+* Game with all words found:
+![Word Search with all words found](/assets/allwords.png)
