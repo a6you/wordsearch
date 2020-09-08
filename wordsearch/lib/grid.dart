@@ -160,7 +160,8 @@ class _State extends State<Board> {
     if (gridState[x][y].contains('0')) {
       String letter = gridState[x][y].substring(0, 1);
       return Container(
-          decoration: BoxDecoration(color: Colors.blue),
+          decoration: BoxDecoration(
+              color: Colors.blue, border: Border.all(color: Colors.black)),
           child: Center(
               child: Text(
             letter,
